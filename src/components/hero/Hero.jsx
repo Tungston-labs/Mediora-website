@@ -60,7 +60,7 @@ const Hero = ({ openContact }) => {
     }
   };
   const handleWhatsAppClick = () => {
-    const phoneNumber = "+917025220037";
+    const phoneNumber = "+919898989898";
 
     let message = "Hi, I'm interested to know more about health insurance.";
 
