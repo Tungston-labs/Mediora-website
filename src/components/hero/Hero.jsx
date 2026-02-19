@@ -73,7 +73,7 @@ const Hero = ({ openContact }) => {
 
 
   return (
-    <HeroSection>
+<HeroSection id="home">
       <WhatsappWrapper onClick={handleWhatsAppClick} style={{ cursor: "pointer" }}>
         <WhatsappText>CHAT WITH EXPERT</WhatsappText>
         <WhatsappIcon src={whatsapp} alt="whatsapp" />

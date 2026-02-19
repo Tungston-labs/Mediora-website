@@ -51,11 +51,11 @@ const Footer = () => {
               protection.
             </Description>
 
-            <SocialRow>
+            {/* <SocialRow>
               <SocialIcon src={facebook} />
               <SocialIcon src={twitter} />
               <SocialIcon src={linkedin} />
-            </SocialRow>
+            </SocialRow> */}
           </BrandColumn>
 
           {/* QUICK LINKS */}
