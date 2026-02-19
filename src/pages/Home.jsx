@@ -14,16 +14,19 @@ const Home = ({ openContact }) => {
   return (
     <>
       <Navbar openContact={openContact} />
-      <Hero />
+
+
+      <Hero openContact={openContact} />
+
       <HeroServices />
       <HowMediora />
       <About />
       <TrustSection />
-      <Services />
-      <Testimonials />
+      <Services openContact={openContact} />      <Testimonials />
       <Footer />
     </>
   );
 };
+
 
 export default Home;

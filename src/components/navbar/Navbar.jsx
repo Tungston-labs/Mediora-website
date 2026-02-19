@@ -62,7 +62,15 @@ const Navbar = ({ openContact }) => {
             />
           </InfoGroup>
 
-          <Button>Explore Plans</Button>
+<Button
+  as={Link}
+  to="services"
+  smooth={true}
+  duration={500}
+  offset={-90}
+>
+  Explore Plans
+</Button>
 
         </TopContent>
       </TopBar>
@@ -99,11 +107,11 @@ const Navbar = ({ openContact }) => {
             </NavLink>
           </NavLinks>
 
-          <SocialGroup>
+          {/* <SocialGroup>
             <SocialIcon src={facebookLogo} />
             <SocialIcon src={twitterLogo} />
             <SocialIcon src={linkedinLogo} />
-          </SocialGroup>
+          </SocialGroup> */}
 
         </BottomContent>
       </BottomBar>
