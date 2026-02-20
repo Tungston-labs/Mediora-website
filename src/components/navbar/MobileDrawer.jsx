@@ -121,7 +121,10 @@ const MobileDrawer = ({ open, onClose, openContact }) => {
           Contact Us
         </NavLink>
 
-        <DrawerButton onClick={onClose}>
+        <DrawerButton onClick={() => {
+          scroller.scrollTo('services', { duration: 500, smooth: true, offset: getNavOffset() });
+          onClose();
+        }}>
           Explore Plans
         </DrawerButton>
       </Box>

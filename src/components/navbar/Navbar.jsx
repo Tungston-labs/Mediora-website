@@ -31,10 +31,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const getNavOffset = () => {
   const w = window.innerWidth;
-  if (w >= 1440) return -165; // TopBar 6.5rem + BottomBar 3.5rem = 10rem = 160px
-  if (w >= 1024) return -157; // 6rem + 3.5rem = 9.5rem = 152px
-  if (w >= 768)  return -149; // 5.5rem + 3.5rem = 9rem = 144px
-  return -85;                  // mobile: TopBar only 5rem = 80px
+  if (w >= 1440) return -165;
+  if (w >= 1024) return -157;
+  if (w >= 768)  return -149;
+  return -85;
 };
 
 const Navbar = ({ openContact }) => {
@@ -71,11 +71,8 @@ const Navbar = ({ openContact }) => {
           </InfoGroup>
 
 <Button
-  as={Link}
-  to="services"
-  smooth={true}
-  duration={500}
-  offset={-90}
+  as="button"
+  onClick={() => scroller.scrollTo('services', { duration: 500, smooth: true, offset: getNavOffset() })}
 >
   Explore Plans
 </Button>
@@ -110,11 +107,7 @@ const Navbar = ({ openContact }) => {
             </NavLink>
           </NavLinks>
 
-          {/* <SocialGroup>
-            <SocialIcon src={facebookLogo} />
-            <SocialIcon src={twitterLogo} />
-            <SocialIcon src={linkedinLogo} />
-          </SocialGroup> */}
+
 
         </BottomContent>
       </BottomBar>

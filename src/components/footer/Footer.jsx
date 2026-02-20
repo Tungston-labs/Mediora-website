@@ -40,7 +40,7 @@ const Footer = () => {
     <Section id="footer">
       <Container>
         <Grid>
-          {/* BRAND */}
+
           <BrandColumn>
             <Logo src={logo} />
 
@@ -51,14 +51,10 @@ const Footer = () => {
               protection.
             </Description>
 
-            {/* <SocialRow>
-              <SocialIcon src={facebook} />
-              <SocialIcon src={twitter} />
-              <SocialIcon src={linkedin} />
-            </SocialRow> */}
+
           </BrandColumn>
 
-          {/* QUICK LINKS */}
+
           <LinksColumn>
             <Title>QUICK LINKS</Title>
 
@@ -93,7 +89,7 @@ const Footer = () => {
                 SERVICES
               </Link>
 
-              {/* Contact modal trigger (scroll to top or open modal) */}
+
               <Link
                 as={ScrollLink}
                 onClick={() =>
@@ -105,7 +101,7 @@ const Footer = () => {
             </Links>
           </LinksColumn>
 
-          {/* CONTACT INFO */}
+
           <ContactColumn>
             <Title>GET IN TOUCH</Title>
 
@@ -133,7 +129,7 @@ const Footer = () => {
             </ContactItem>
           </ContactColumn>
 
-          {/* RIGHT SIDE */}
+
           <RightColumn>
             <Image src={illustration} />
 

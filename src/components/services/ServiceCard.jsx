@@ -19,7 +19,7 @@ import profile from "../../assets/service/profile.svg";
 
 const ServiceCard = ({ image, title, bullets, openContact }) => {
   const handleEnquire = () => {
-    // open modal with policy name
+
     openContact?.("", title);
   };
 
@@ -46,7 +46,7 @@ const ServiceCard = ({ image, title, bullets, openContact }) => {
           ))}
         </BulletGrid>
 
-        {/* ⭐ modal trigger */}
+
         <Button onClick={handleEnquire}>ENQUIRE NOW</Button>
       </Content>
     </Card>
