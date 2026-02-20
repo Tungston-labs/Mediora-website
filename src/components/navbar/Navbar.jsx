@@ -26,8 +26,16 @@ import facebookLogo from "../../assets/navbar/facebook_logo.svg";
 import twitterLogo from "../../assets/navbar/Twitter_logo.svg";
 import linkedinLogo from "../../assets/navbar/linkedin_logo.svg";
 
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll, scroller } from "react-scroll";
 import MenuIcon from "@mui/icons-material/Menu";
+
+const getNavOffset = () => {
+  const w = window.innerWidth;
+  if (w >= 1440) return -165; // TopBar 6.5rem + BottomBar 3.5rem = 10rem = 160px
+  if (w >= 1024) return -157; // 6rem + 3.5rem = 9.5rem = 152px
+  if (w >= 768)  return -149; // 5.5rem + 3.5rem = 9rem = 144px
+  return -85;                  // mobile: TopBar only 5rem = 80px
+};
 
 const Navbar = ({ openContact }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -71,26 +79,21 @@ const Navbar = ({ openContact }) => {
         <BottomContent>
 
           <NavLinks>
-            <NavLink href="#">Home</NavLink>
             <NavLink
-              as={Link}
-              to="about"
-              smooth={true}
-              duration={500}
-              offset={-90}
-              spy={true}
-              activeClass="active"
+              as="button"
+              onClick={() => scroll.scrollToTop({ duration: 500, smooth: true })}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              as="button"
+              onClick={() => scroller.scrollTo('about', { duration: 500, smooth: true, offset: getNavOffset() })}
             >
               About Us
             </NavLink>
             <NavLink
-              as={Link}
-              to="services"
-              smooth={true}
-              duration={500}
-              offset={-90}
-              spy={true}
-              activeClass="active"
+              as="button"
+              onClick={() => scroller.scrollTo('services', { duration: 500, smooth: true, offset: getNavOffset() })}
             >
               Our Service
             </NavLink>

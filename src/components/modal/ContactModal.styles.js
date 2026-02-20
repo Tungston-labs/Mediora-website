@@ -106,7 +106,22 @@ export const CloseButton = styled.button`
     transform: rotate(90deg);
     background: #f3f3f3;
   }
+
+  @media ${breakpoint.mobileAll} {
+    top: 0.8rem;
+    right: 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
 `;
+
 
 
 export const LeftPanel = styled.div`

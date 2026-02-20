@@ -14,14 +14,16 @@ const Home = ({ openContact }) => {
   return (
     <>
       <Navbar openContact={openContact} />
-      <Hero />
-      <HeroServices />
-      <HowMediora />
-      <About />
-      <TrustSection />
-      <Services />
-      <Testimonials />
-      <Footer />
+      <div id="home">
+        <Hero />
+        <HeroServices />
+        <HowMediora />
+        <About />
+        <TrustSection />
+        <Services />
+        <Testimonials />
+        <Footer />
+      </div>
     </>
   );
 };

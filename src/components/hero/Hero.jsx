@@ -33,12 +33,18 @@ import whatsapp from "../../assets/hero/whatsapp.svg";
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
-const [selected, setSelected] = useState("I WANT TO COVER");
+  const [selected, setSelected] = useState("I WANT TO COVER");
+  const [showText, setShowText] = useState(false);
+
+  const handleWhatsappTap = () => {
+    setShowText(true);
+    setTimeout(() => setShowText(false), 3000);
+  };
   
 return (
     <HeroSection>
-      <WhatsappWrapper>
-        <WhatsappText>CHAT WITH EXPERT</WhatsappText>
+      <WhatsappWrapper onClick={handleWhatsappTap}>
+        <WhatsappText $active={showText}>CHAT WITH EXPERT</WhatsappText>
         <WhatsappIcon src={whatsapp} alt="whatsapp" />
       </WhatsappWrapper>
       <HeroContainer>

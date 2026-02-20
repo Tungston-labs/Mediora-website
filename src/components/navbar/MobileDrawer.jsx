@@ -2,10 +2,18 @@ import React, { useEffect } from "react";
 import { Drawer, Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { NavLink } from "./Navbar.styles";
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll, scroller } from "react-scroll";
 
 import { DrawerButton } from "./MobileDrawer.styles";
 import useLockBodyScroll from "./useLockBodyScroll";
+
+const getNavOffset = () => {
+  const w = window.innerWidth;
+  if (w >= 1440) return -165;
+  if (w >= 1024) return -157;
+  if (w >= 768)  return -149;
+  return -85;
+};
 
 const MobileDrawer = ({ open, onClose, openContact }) => {
 
@@ -41,8 +49,8 @@ const MobileDrawer = ({ open, onClose, openContact }) => {
 
       sx={{
         "& .MuiDrawer-paper": {
-          top: "5rem",
-          height: "calc(100% - 5rem)",
+          top: "0",
+          height: "100%",
           backgroundColor: "#01A35B",
           color: "#fff",
           padding: "2.5rem",
@@ -55,7 +63,7 @@ const MobileDrawer = ({ open, onClose, openContact }) => {
         onClick={onClose}
         sx={{
           position: "fixed",
-          top: "5.5rem",
+          top: "1rem",
           right: "1rem",
           color: "white",
           zIndex: 1400,
@@ -73,28 +81,32 @@ const MobileDrawer = ({ open, onClose, openContact }) => {
           paddingTop: "1rem",
         }}
       >
-        <NavLink as="button" onClick={onClose}>
+        <NavLink
+          as="button"
+          onClick={() => {
+            scroll.scrollToTop({ duration: 500, smooth: true });
+            onClose();
+          }}
+        >
           Home
         </NavLink>
 
         <NavLink
-          as={Link}
-          to="about"
-          smooth
-          duration={500}
-          offset={-90}
-          onClick={onClose}
+          as="button"
+          onClick={() => {
+            scroller.scrollTo('about', { duration: 500, smooth: true, offset: getNavOffset() });
+            onClose();
+          }}
         >
           About Us
         </NavLink>
 
         <NavLink
-          as={Link}
-          to="services"
-          smooth
-          duration={500}
-          offset={-90}
-          onClick={onClose}
+          as="button"
+          onClick={() => {
+            scroller.scrollTo('services', { duration: 500, smooth: true, offset: getNavOffset() });
+            onClose();
+          }}
         >
           Our Service
         </NavLink>

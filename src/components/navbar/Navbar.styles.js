@@ -15,9 +15,21 @@ export const NavWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
-  position: sticky;
-  top: 0;
-  z-index: 1100;
+  /* 768px+: offset for both fixed TopBar (6.5rem) + BottomBar (3.5rem) */
+  padding-top: 10rem;
+
+  @media ${device.laptop} {
+    padding-top: 9.5rem; /* 6rem + 3.5rem */
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding-top: 9rem; /* 5.5rem + 3.5rem */
+  }
+
+  /* Mobile: only TopBar is fixed, BottomBar stays in flow */
+  @media (max-width: 767px) {
+    padding-top: 5rem;
+  }
 `;
 
 export const Container = styled.div`
@@ -46,6 +58,12 @@ export const Container = styled.div`
 `;
 
 export const TopBar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+
   height: 6.5rem;
   background-color: ${colors.textLight};
   display: flex;
@@ -55,11 +73,9 @@ export const TopBar = styled.div`
     height: 6rem;
   }
 
-
   @media (min-width: 768px) and (max-width: 1023px) {
     height: 5.5rem;
   }
-
 
   @media (max-width: 767px) {
     height: 5rem;
@@ -211,7 +227,27 @@ export const BottomBar = styled.div`
   display: flex;
   justify-content: center;
 
+  /* Fixed below TopBar on 768px+ */
+  position: fixed;
+  top: 6.5rem;
+  left: 0;
+  right: 0;
+  z-index: 1099;
+
+  @media ${device.laptop} {
+    top: 6rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    top: 5.5rem;
+  }
+
+  /* Mobile: back to normal document flow */
   @media (max-width: 767px) {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
     height: 3rem;
   }
 `;

@@ -122,16 +122,25 @@ export const WhatsappText = styled.div`
   opacity: 0;
   visibility: hidden;
   transform: translateX(10px);
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 
+  /* Desktop: show on CSS hover */
   ${WhatsappWrapper}:hover & {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
   }
+
+  /* Mobile/tablet: show when $active (tapped) */
+  ${({ $active }) => $active && `
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  `}
   
   @media ${device.mobile} {
-    display: none;
+    font-size: 0.5rem;
+    padding: 0.2rem 0.2rem;
   }
 `;
 
