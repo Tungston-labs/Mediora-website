@@ -14,18 +14,19 @@ const Home = ({ openContact }) => {
   return (
     <>
       <Navbar openContact={openContact} />
-      <div id="home">
-        <Hero />
-        <HeroServices />
-        <HowMediora />
-        <About />
-        <TrustSection />
-        <Services />
-        <Testimonials />
-        <Footer />
-      </div>
+
+
+      <Hero openContact={openContact} />
+
+      <HeroServices />
+      <HowMediora />
+      <About />
+      <TrustSection />
+      <Services openContact={openContact} />      <Testimonials />
+      <Footer />
     </>
   );
 };
+
 
 export default Home;

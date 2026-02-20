@@ -17,24 +17,26 @@ import {
 import tick from "../../assets/service/tick.svg";
 import profile from "../../assets/service/profile.svg";
 
-const ServiceCard = ({ image, title, bullets }) => {
+const ServiceCard = ({ image, title, bullets, openContact }) => {
+  const handleEnquire = () => {
+    // open modal with policy name
+    openContact?.("", title);
+  };
+
   return (
     <Card>
-
       <ImageWrapper>
         <Image src={image} />
 
         <Bar>
           {title}
-         <IconBox>
-   <Profile src={profile} alt="profile"/>
-</IconBox>
-
+          <IconBox>
+            <Profile src={profile} alt="profile" />
+          </IconBox>
         </Bar>
       </ImageWrapper>
 
       <Content>
-
         <BulletGrid>
           {bullets.map((item, index) => (
             <Bullet key={index}>
@@ -44,10 +46,9 @@ const ServiceCard = ({ image, title, bullets }) => {
           ))}
         </BulletGrid>
 
-        <Button>ENQUIRE NOW</Button>
-
+        {/* ⭐ modal trigger */}
+        <Button onClick={handleEnquire}>ENQUIRE NOW</Button>
       </Content>
-
     </Card>
   );
 };

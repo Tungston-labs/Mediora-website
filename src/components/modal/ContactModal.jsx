@@ -9,7 +9,8 @@ import ContactInfo from "./ContactInfo";
 import ContactForm from "./ContactForm";
 import useModalEffects from "./useModalEffects";
 
-const ContactModal = ({ open, onClose }) => {
+const ContactModal = ({ open, onClose, phone, policy }) => {
+
 
   useModalEffects(open, onClose);
 
@@ -17,13 +18,16 @@ const ContactModal = ({ open, onClose }) => {
 
   return (
     <Overlay onClick={onClose}>
-      <ModalWrapper onClick={(e)=>e.stopPropagation()}>
+      <ModalWrapper onClick={(e) => e.stopPropagation()}>
 
         <CloseButton onClick={onClose}>✕</CloseButton>
 
         <ContactInfo />
-        <ContactForm />
-
+ <ContactForm
+          phone={phone}
+          policy={policy}
+          onClose={onClose}
+        />
       </ModalWrapper>
     </Overlay>
   );
