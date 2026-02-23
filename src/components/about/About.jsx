@@ -15,7 +15,8 @@ import {
   BlockTitle,
   BlockText,
   ImageWrapper,
-  HeroImage
+  HeroImage,
+  MobileBreak
 } from "./About.styles";
 
 
@@ -45,8 +46,10 @@ const About = () => {
 
           <Heading>
             EXPERT GUIDANCE, TRANSPARENT ADVICE,
-            <br />
-            & <Green>RELIABLE HEALTH COVERAGE</Green> — ALL IN ONE PLACE.
+            <MobileBreak />
+            & <Green>RELIABLE HEALTH COVERAGE</Green>
+            <MobileBreak />
+            — ALL IN ONE PLACE.
           </Heading>
 
           <Description>

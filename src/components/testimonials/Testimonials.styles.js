@@ -65,7 +65,7 @@ export const Heading = styled.h2`
   }
 
   @media (max-width: 600px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 2.2rem;
   }
 `;

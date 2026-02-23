@@ -48,7 +48,9 @@ export const Heading = styled.h2`
   margin-bottom: 0.5rem;
 
   @media ${device.mobile} {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    font-weight: 500;
   }
 `;
 
@@ -60,8 +62,10 @@ export const SubText = styled.p`
   margin-bottom: 4rem;
 
   @media ${device.mobile} {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     margin-bottom: 3rem;
+    font-weight: 500;
+    white-space: nowrap;
   }
 `;
 
@@ -91,7 +95,7 @@ export const Timeline = styled.div`
     display: flex;
     flex-direction: column;
     overflow-x: visible;
-    gap: 4rem;
+    gap: 1.5rem;
     padding-bottom: 0;
     padding-top: 0;
   }
@@ -142,12 +146,13 @@ export const Card = styled.div`
   }
 
   @media (max-width: 767px) {
-    width: 65%;
-    min-width: unset;
-    min-height: 12rem;
+    width: 60%;
+    aspect-ratio: 202 / 254;
+    min-height: auto;
+    border-radius: 20px 0 20px 0;
     transform: none !important;
-    padding: 1.5rem 1.2rem;
-    margin-bottom: 2.5rem;
+    padding: clamp(1.2rem, 8vw, 3.5rem) clamp(1rem, 5vw, 1.7rem);
+    margin-bottom: 1.5rem;
     &:nth-child(odd) {
       align-self: flex-start;
       margin-left: 1.5rem;
@@ -155,6 +160,11 @@ export const Card = styled.div`
     &:nth-child(even) {
       align-self: flex-end;
       margin-right: 1.5rem;
+    }
+
+    &:hover {
+      transform: none !important;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
     }
   }
 `;
@@ -173,9 +183,12 @@ export const Icon = styled.img`
 
 
 export const Title = styled.h4`
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-bottom: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 
@@ -217,7 +230,7 @@ export const StepNumber = styled.div`
     top: auto;
     bottom: 0;
     transform: translate(-50%, 50%);
-    width: 2.5rem;
+    width: clamp(2.5rem, 16vw, 4.5rem);
   }
 `;
 
@@ -247,9 +260,9 @@ export const Arrow = styled.img`
 export const MobileArrow = styled.img`
   display: none;
   position: absolute;
-  width: 5rem;
+  width: 6rem;
   pointer-events: none;
-  z-index: -1; 
+ 
   opacity: 0.7;
 
   @media (max-width: 767px) {
@@ -258,12 +271,12 @@ export const MobileArrow = styled.img`
     ${({ $align }) =>
     $align === "top"
       ? `
-          left: 100%;
+          left: 105%;
           top: 55%;
           transform: rotate(10deg);
         `
       : `
-          right: 100%;
+          right: 105%;
           top: 55%;
           transform: rotate(-15deg);
         `}

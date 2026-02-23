@@ -110,14 +110,14 @@ export const CloseButton = styled.button`
   @media ${breakpoint.mobileAll} {
     top: 0.8rem;
     right: 0.8rem;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: rgba(0, 0, 0, 0.05);
+    color: #333;
     width: 2.2rem;
     height: 2.2rem;
     font-size: 1rem;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(0, 0, 0, 0.1);
     }
   }
 `;
@@ -146,6 +146,7 @@ export const LeftPanel = styled.div`
   @media ${breakpoint.mobileAll} {
     padding: 2rem;
     flex: none;
+    order: 2;
   }
 `;
 
@@ -190,6 +191,7 @@ export const RightPanel = styled.div`
   @media ${breakpoint.mobileAll} {
     padding: 1.5rem;
     flex: none;
+    order: 1;
   }
 `;
 

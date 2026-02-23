@@ -86,6 +86,17 @@ export const Heading = styled.h2`
     font-size: 1rem;
     line-height: 1.65rem;
     margin-bottom: 0.75rem;
+
+    .desktop-break {
+      display: none;
+    }
+  }
+`;
+
+export const MobileBreak = styled.br`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
   }
 `;
 
@@ -282,5 +293,9 @@ export const FloatText = styled.span`
   color: #2b2b2b;
   text-align: left;
   letter-spacing: 0.02em;
-  white-space: pre-line;
+  white-space: pre;
+  
+  @media (max-width: 767px) {
+    font-size: 0.65rem;
+  }
 `;

@@ -138,6 +138,10 @@ export const InfoBlockContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    display: ${({ $hideOnTablet }) => ($hideOnTablet ? "none" : "flex")};
+  }
 `;
 
 export const IconBox = styled.div`

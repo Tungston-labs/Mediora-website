@@ -102,6 +102,10 @@ export const Image = styled.img`
   width: 100%;
   height: 16rem;
   object-fit: cover;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 
@@ -128,6 +132,11 @@ export const Bar = styled.div`
 
   &:hover{
     background: #0C6553;
+  }
+
+  @media (max-width: 767px) {
+    position: relative;
+    bottom: auto;
   }
 `;
 
@@ -170,6 +179,13 @@ export const Bullet = styled.div`
 
   font-size: 0.8rem;
   color: #2c2c2c;
+
+  @media (max-width: 767px) {
+   
+    overflow: hidden;
+    font-size: 0.8rem;
+    align-items: center; 
+  }
 `;
 
 

@@ -7,9 +7,9 @@ import {
   InfoSubtitle
 } from "./Navbar.styles";
 
-const NavbarInfoBlock = ({ icon, title, subtitle }) => {
+const NavbarInfoBlock = ({ icon, title, subtitle, hideOnTablet }) => {
   return (
-    <InfoBlockContainer>
+    <InfoBlockContainer $hideOnTablet={hideOnTablet}>
       <IconBox>
         <img src={icon} alt={title} />
       </IconBox>

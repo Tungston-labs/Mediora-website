@@ -57,11 +57,13 @@ const Navbar = ({ openContact }) => {
               icon={callIcon}
               title="Call to our experts"
               subtitle="0485 2000361"
+             
             />
             <NavbarInfoBlock
               icon={callIcon}
               title="Our mobile number"
               subtitle="(+91) 9567923861"
+               hideOnTablet
             />
             <NavbarInfoBlock
               icon={atIcon}

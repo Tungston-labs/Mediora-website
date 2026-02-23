@@ -45,7 +45,7 @@ const HeroForm = ({ openContact }) => {
     <QuoteCard>
       <InputRow>
         <div style={{ flex: 1 }}>
-          <InputBox>
+          <InputBox $isFirst={true}>
             <img src={phoneIcon} alt="" width="18" />
 
             <input
@@ -57,6 +57,7 @@ const HeroForm = ({ openContact }) => {
                 border: "none",
                 outline: "none",
                 flex: 1,
+                backgroundColor: "transparent",
               }}
             />
           </InputBox>

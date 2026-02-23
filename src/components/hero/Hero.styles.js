@@ -84,8 +84,8 @@ export const HeroImage = styled.img`
     right: 0;
     bottom: 0;
     height: auto;
-    max-width: 50%;
-    max-height: 45%;
+    max-width: 52%;
+    max-height: 50%;
     object-fit: contain;
     object-position: bottom right;
   }
@@ -238,7 +238,7 @@ export const QuoteCard = styled.div`
   }
 
   @media (max-width: 767px) {
-    max-width: 100%;
+    max-width: 45%;
     padding: 0;
     background: transparent;
     backdrop-filter: none;
@@ -277,6 +277,9 @@ export const InputBox = styled.div`
   @media (max-width: 767px) {
     font-size: 0.7rem;
     padding-bottom: 0.5rem;
+    ${({ $isFirst }) => $isFirst && `
+      width: 120%;
+    `}
   }
 `;
 
