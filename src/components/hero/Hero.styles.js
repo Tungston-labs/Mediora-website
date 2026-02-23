@@ -122,25 +122,16 @@ export const WhatsappText = styled.div`
   opacity: 0;
   visibility: hidden;
   transform: translateX(10px);
-  transition: all 0.1s ease;
+  transition: all 0.3s ease;
 
-  /* Desktop: show on CSS hover */
   ${WhatsappWrapper}:hover & {
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
   }
-
-  /* Mobile/tablet: show when $active (tapped) */
-  ${({ $active }) => $active && `
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  `}
   
   @media ${device.mobile} {
-    font-size: 0.5rem;
-    padding: 0.2rem 0.2rem;
+    display: none;
   }
 `;
 
@@ -252,7 +243,6 @@ export const QuoteCard = styled.div`
     background: transparent;
     backdrop-filter: none;
     box-shadow: none;
-    overflow: visible;
   }
 `;
 
@@ -342,50 +332,27 @@ export const HelperText = styled.p`
 export const DropdownWrapper = styled.div`
   flex: 1;
   position: relative;
-
-  @media (max-width: 767px) {
-    position: relative;
-    z-index: 20;
-    width: 100%;
-  }
 `;
 
 export const Dropdown = styled.div`
   position: absolute;
   top: 110%;
   left: 0;
-  min-width: 100%;
-  width: max-content;
+  width: 100%;
   background: white;
   border-radius: 0.6rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  z-index: 30;
+  z-index: 10;
   overflow: hidden;
-
-  @media (max-width: 767px) {
-    width: 100%;
-    left: 0;
-    right: 0;
-    z-index: 30;
-  }
 `;
 
 export const Option = styled.div`
-  padding: 0.8rem 1rem 1.1rem;
+  padding: 0.8rem;
   font-size: 0.75rem;
-  font-family: 'Alata', sans-serif;
   cursor: pointer;
   transition: background 0.2s ease;
-  white-space: normal;
-  word-break: break-word;
-  line-height: 1.4;
 
   &:hover {
     background: #f5f5f5;
-  }
-
-  @media (max-width: 767px) {
-    font-size: 0.72rem;
-    padding: 0.75rem 0.8rem;
   }
 `;

@@ -8,7 +8,7 @@ export const Section = styled.section`
   overflow: hidden;
 
   @media ${device.mobile} {
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
 `;
 
@@ -174,7 +174,7 @@ export const HeroImage = styled.img`
   right: 0;
   bottom: 0;
   width: auto;
-  height: 80%;
+  height: 70%;
   max-height: 100%;
   display: block;
 
@@ -186,12 +186,13 @@ export const HeroImage = styled.img`
 
   @media (max-width: 767px) {
     position: relative;
-    order: 2;
-    grid-column: 1 / -1;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
     width: 100%;
     height: auto;
     max-width: 400px;
-     right: -3rem;
+    right: -1rem;
   }
 `;
 
@@ -229,7 +230,7 @@ export const FloatCard = styled.div`
     }
     &:nth-of-type(2) {
        top: 5% !important;
-       right: 5% !important;
+       right: 15% !important;
        left: auto !important;
        bottom: auto !important;
     }

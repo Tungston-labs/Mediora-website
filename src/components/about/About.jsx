@@ -29,14 +29,12 @@ import heroimage from "../../assets/about/heroimage.svg";
 import longterm from "../../assets/about/longterm.svg";
 import dedicated from "../../assets/about/dedicated.svg";
 import personalized from "../../assets/about/personalizedpolicy.svg";
-import expert from "../../assets/heroservice/expert.svg";
+
 
 const About = () => {
   return (
     <Section id="about">
       <Container>
-
-       
 
         <Content>
 
@@ -57,8 +55,6 @@ const About = () => {
             insurance expert.
           </Description>
 
-        
-
           <Block>
             <BlockIcon src={mission} />
 
@@ -76,7 +72,6 @@ const About = () => {
             </div>
           </Block>
 
-      
           <Block>
             <BlockIcon src={vision} />
 
@@ -96,13 +91,7 @@ const About = () => {
 
         </Content>
 
-        
-
         <ImageWrapper>
-
-          <HeroImage src={heroimage} />
-
-   
 
           <FloatingCard
             icon={longterm}
@@ -135,6 +124,9 @@ const About = () => {
         </ImageWrapper>
 
       </Container>
+
+      <HeroImage src={heroimage} />
+
     </Section>
   );
 };
