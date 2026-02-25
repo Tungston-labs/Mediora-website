@@ -2,7 +2,11 @@ import styled, { keyframes } from "styled-components";
 
 export const Section = styled.section`
   background: #0C6553;
-  padding: 1rem 0;
+  padding: 4rem 0;
+
+  @media (max-width: 600px) {
+    padding: 3rem 0;
+  }
 `;
 
 export const Container = styled.div`
@@ -148,7 +152,7 @@ export const Center = styled.div`
 
 export const Divider = styled.div`
   position: absolute;
-  height: 160%;
+  height: 250%; /* Increased from 160% to match new section padding */
   width: 4px;
   border-right: 2px dashed rgba(255,255,255,0.25);
 
