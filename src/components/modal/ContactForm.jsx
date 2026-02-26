@@ -12,6 +12,7 @@ import {
 } from "./ContactModal.styles";
 
 import logo from "../../assets/modal/logo.svg";
+import Swal from "sweetalert2";
 
 const ContactForm = ({ phone, policy, onClose }) => {
   const [formData, setFormData] = useState({
@@ -97,34 +98,64 @@ const ContactForm = ({ phone, policy, onClose }) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async () => {
-    if (!validate()) return;
+ const handleSubmit = async () => {
+  if (!validate()) return;
 
-    try {
-      const response = await fetch(
-        "https://mediorainsurance.com/send-mail.php",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.status === "success") {
-        alert("Message sent successfully!");
-        onClose();
-      } else {
-        alert("Failed to send message.");
+  try {
+    const response = await fetch(
+      "https://mediorainsurance.com/send-mail.php",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
       }
-    } catch (error) {
-      alert("Error sending message.");
-    }
-  };
+    );
 
+    const data = await response.json();
+
+    if (data.status === "success") {
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text: "Your message has been sent successfully.",
+        confirmButtonColor: "#3085d6",
+        timer: 2000,
+        showConfirmButton: false
+      });
+
+      // Reset form
+      setFormData({
+        firstName: "",
+        pinCode: "",
+        email: "",
+        phoneNumber: "",
+        insurancePolicy: "",
+        message: ""
+      });
+
+      // Close modal after short delay
+      setTimeout(() => {
+        onClose();
+      }, 2000);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Failed to send message. Please try again.",
+        confirmButtonColor: "#d33"
+      });
+    }
+  } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Server Error",
+      text: "Something went wrong. Please try again later.",
+      confirmButtonColor: "#d33"
+    });
+  }
+};
   return (
     <RightPanel>
       <Logo src={logo} />
